@@ -8,12 +8,12 @@ repo untuk course js
 
 contoh : 
 
-git clone url/edugram-js
+`git clone url/edugram-js`
 
-cd edugram-js && mkdir udin
+`cd edugram-js && mkdir udin`
 
-cd udin
+`cd udin`
 
-git commit -m 'pengumpulan tugas js batch 1'
+`git commit -m 'pengumpulan tugas js batch 1'`
 
-git push
+`git push`
