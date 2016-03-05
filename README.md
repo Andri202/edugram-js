@@ -14,6 +14,6 @@ contoh :
 
 `cd udin`
 
-`git commit -m 'pengumpulan tugas js batch 1'`
+`git commit -m 'ujian js batch 1'`
 
 `git push`
