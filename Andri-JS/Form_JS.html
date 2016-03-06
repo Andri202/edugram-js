@@ -68,12 +68,12 @@
 	<body>
 		<div id=wraper>
 			<div id =header> - Form Biodata - </div>
-			<form name="myForm" onsubmit="return(validate());">
+			<form name="myForm" >
 				<div class =box1>Name</div><div class =box2> : <input type="text" name="Name" id="fnama" /></div>
 				<div class=box1>Photo</div> <div class=box2><input type="file" id="imgfile" onchange="previewimage()"></div>
 				<div class =box1>Email</div><div class=box2> : <input type="text" name="Email"/></div>
 				<div class=preview><img src="" height="270px" width="410px" alt="Gambar Anda"></div>
-				<div class =box1>Alamat</div><div class=box2> : <input type="text" name="Alamat" id="alamat"  value=" "/></div>
+				<div class =box1>Alamat</div><div class=box2> : <input type="text" name="Alamat" value=" "/></div>
 				<div class =box1>Pendidikan</div>
 				<div class=box2> : 
 					<select name="pendidikan">
@@ -85,7 +85,7 @@
 						<option value="SARJANA">Sarjana</option>
 					</select>
 				</div>
-				<div class=button><input type="submit" value="Submit"/></div>
+				<div class=button><button onclick="validate(this)">Submit</button></div>
 				<div class=footer>Copy Right &copy; Andri Gunawan</div>
 			</form>
 		</div>
