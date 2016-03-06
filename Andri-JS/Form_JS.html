@@ -1,0 +1,93 @@
+<html>
+   
+	<head>
+		<title>Form Validation</title>
+		<link rel="stylesheet" href="css/css.css">  
+		<script type="text/javascript">
+			function validate(){
+				var mail = document.forms["myForm"]["Email"].value;
+				var atpos = mail.indexOf("@");
+				var dotpos = mail.lastIndexOf(".");
+      
+				if( document.myForm.Name.value == "" ){
+					alert( "Isi Nama Anda !!!" );
+					document.myForm.Name.focus() ;
+					return false;
+				}
+         
+				if (atpos<1 || dotpos<atpos+2 || dotpos+2>=mail.length) {
+					alert("Email Anda Tidak Valid !!!");
+					document.myForm.Email.focus() ;
+					return false;
+				}
+				
+				if( document.myForm.Alamat.value == " "){
+					alert( "Isi Alamat Anda !!!" );
+					document.myForm.Pendidikan.focus() ;
+					return false;
+				}
+				if( document.myForm.Pendidikan.value == "-1" ){
+					alert( "Isi pendidikan anda" );
+					return false;
+				}
+			}
+      
+			function previewimage() {
+				var 
+				preview = document.querySelector('img');
+				file    = document.querySelector('input[type=file]').files[0];
+				reader  = new FileReader();
+				imgpath=document.getElementById('imgfile');
+				img=imgpath.files[0].size;
+				fileName, fileExtension;
+				fileName = imgpath.value;
+				fileExtension = fileName.substr((fileName.lastIndexOf('.') + 1));
+
+				if (fileExtension == "jpg" || fileExtension == "jpeg" || fileExtension == "png"){
+					if (img < "2100000"){
+						reader.addEventListener("load", function () {
+						preview.src = reader.result;
+						}, false);
+						if (file) {
+							reader.readAsDataURL(file);
+						}
+						return false;
+					}
+					else{
+						alert("Ukuran gambar kebesaran !!!");
+						return false;
+					}
+				}
+				else{
+					alert("Bukan Gambar");
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id=wraper>
+			<div id =header> - Form Biodata - </div>
+			<form name="myForm" onsubmit="return(validate());">
+				<div class =box1>Name</div><div class =box2> : <input type="text" name="Name" id="fnama" /></div>
+				<div class=box1>Photo</div> <div class=box2><input type="file" id="imgfile" onchange="previewimage()"></div>
+				<div class =box1>Email</div><div class=box2> : <input type="text" name="Email"/></div>
+				<div class=preview><img src="" height="270px" width="410px" alt="Gambar Anda"></div>
+				<div class =box1>Alamat</div><div class=box2> : <input type="text" name="Alamat" id="alamat"  value=" "/></div>
+				<div class =box1>Pendidikan</div>
+				<div class=box2> : 
+					<select name="pendidikan">
+						<option value="-1" selected>- Pilih -</option>
+						<option value="SD">SD</option>
+						<option value="SMP">SMP</option>
+						<option value="SMA">SMA</option>
+						<option value="DIPLOMA">Diploma</option>
+						<option value="SARJANA">Sarjana</option>
+					</select>
+				</div>
+				<div class=button><input type="submit" value="Submit"/></div>
+				<div class=footer>Copy Right &copy; Andri Gunawan</div>
+			</form>
+		</div>
+	</body>
+</html>
